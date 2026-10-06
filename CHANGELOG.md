@@ -2,12 +2,15 @@
 
 ## 1.1.0 — 2026-10-06
 
-Thêm cách **cài bằng 1 câu với Claude** (chủ duyệt 06/10/2026). Không đổi mã, không đổi quyền, không đổi lớp an toàn.
+Thêm cách **cài bằng 1 câu với Claude** (chủ duyệt 06/10/2026) và **cố định phiên bản HyperFrames** trong quyền của `edit-video`. Không đổi mã (`.claude/`, `cong-cu/`, `mau-agent/` giữ nguyên).
+
+- **Quyền (chặt hơn):** chủ áp phiếu `de-xuat/2026-10-06-co-dinh-phien-ban-hyperframes.md`. Trong `he-thong/ban-do-quyen.json`, mục `edit-video`, `bash_duoc_phep` đổi `"npx hyperframes"` thành `"npx hyperframes@0.8.137 "` (có dấu cách cuối). Đây là thay đổi duy nhất trong `he-thong/`. Gác cổng so khớp theo phần đầu lệnh, nên agent `edit-video` chỉ chạy được `npx hyperframes@0.8.137 ...`. **Hệ quả:** lệnh `npx hyperframes ...` không ghi phiên bản, hoặc ghi phiên bản khác, sẽ bị chặn; brief video phải ghi đúng phiên bản. **Muốn lên bản mới:** chủ sửa số phiên bản trong chuỗi đó (giữ dấu cách cuối), rồi chạy `node cong-cu/quan-ly-agent.mjs dau-van-tay`.
 
 - **Mới:** `CAI-DAT-1-CAU.md`, hướng dẫn cho Claude (tab Code của ứng dụng Claude, hoặc Claude Code) khi khách dán câu chuẩn: lấy và làm sạch tên công ty/tên khách; kiểm tra Windows, `node --version` (≥ 18), `git --version`, `ffmpeg -version`; đề xuất lệnh winget chính thức (`OpenJS.NodeJS.LTS`, `Git.Git`, `Gyan.FFmpeg`) và chờ khách đồng ý mới cài, xử lý PATH chưa nạp; tải bộ bằng `git clone` vào thư mục trống (hoặc `git init`/`fetch` khi thư mục chỉ có `.claude/settings.local.json`), không có Git thì tải bản nén `main.zip` về thư mục tạm và giải nén bằng `tar --strip-components=1` (bỏ thư mục con `subagent-mien-phi-kit-main`); thư mục không trống thì dừng hỏi; chạy `node cong-cu/cai-dat.mjs --chu "<tên>" --thuong-hieu "<công ty>"`; không chạy lại trình cài khi đã có `he-thong/registry.json`; đọc kết quả kiểm tra (✅ SẴN SÀNG → mở phiên mới, `/khoi-dong`, điền `bo-nho/ho-so-ca-nhan-hoa.md` và `bo-nho/bang-gia.md`; ❌ → giải thích tiếng Việt và cách sửa); luật an toàn khi cài (không nhập mật khẩu/token, không đọc `bi-mat/`, không cài khi chưa đồng ý, không đăng/gửi/xóa).
-- `README.md`: thêm mục đầu tiên **Cài nhanh bằng 1 câu với Claude** (3 bước + câu chuẩn) và một dòng dẫn cho Claude tới `CAI-DAT-1-CAU.md`; cách cài thủ công cũ giữ nguyên, đổi tên thành **Cách 2: Cài thủ công 3 bước**; cấu trúc thư mục thêm `CAI-DAT-1-CAU.md`; khẩu hiệu đổi thành "Kỷ Nguyên Vươn Mình. Liên Tục Tiến Lên!"; số phiên bản 1.1.0.
-- `san-pham.json`: `phien_ban` 1.1.0; `khau_hieu` mới; `mo_ta_ngan` nêu cách cài 1 câu; yêu cầu máy ghi ứng dụng Claude (tab Code) hoặc Claude Code; thêm `CAI-DAT-1-CAU.md` vào `tep_cot_loi`.
-- `DAC-TA.md`: thêm phần cài bằng 1 câu.
+- `README.md`: thêm mục đầu tiên **Cài nhanh bằng 1 câu với Claude** (3 bước + câu chuẩn) và một dòng dẫn cho Claude tới `CAI-DAT-1-CAU.md`; cách cài thủ công cũ giữ nguyên, đổi tên thành **Cách 2: Cài thủ công 3 bước**; cấu trúc thư mục thêm `CAI-DAT-1-CAU.md`; khẩu hiệu đổi thành "Kỷ Nguyên Vươn Mình. Liên Tục Tiến Lên!"; số phiên bản 1.1.0; mục **Thành phần bên thứ ba** và dòng "Mã bên thứ ba" ở mục An toàn ghi "đã cố định 0.8.137", hướng dẫn lên phiên bản và cách tắt dùng đúng chuỗi `"npx hyperframes@0.8.137 "`.
+- `san-pham.json`: `phien_ban` 1.1.0; `khau_hieu` mới; trong `thanh_phan_ben_thu_ba`, trường `phien_ban_khuyen_nghi` đổi thành `phien_ban_co_dinh` và thêm `co_dinh_tai`; `mo_ta_ngan` nêu cách cài 1 câu; yêu cầu máy ghi ứng dụng Claude (tab Code) hoặc Claude Code; thêm `CAI-DAT-1-CAU.md` vào `tep_cot_loi`.
+- `DAC-TA.md`: thêm phần cài bằng 1 câu; ghi thay đổi quyền HyperFrames.
+- `CAI-DAT-1-CAU.md`: Git ghi là cần có, giống README; thiếu Git thì vẫn tải được bằng bản nén.
 
 ## 1.0.1 — 2026-10-06
 

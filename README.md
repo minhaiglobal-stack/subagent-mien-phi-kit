@@ -168,7 +168,7 @@ bi-mat/                   Chỉ chủ dùng; Agent bị chặn đọc
 - **Hàng đợi và quality gate:** job chống làm trùng, giới hạn số lần thử lại, chỉ chuyển "đạt/bàn giao" khi có biên bản QA.
 - **Dữ liệu:** công cụ và dữ liệu nằm trên máy của bạn; bộ không nhúng khóa API và không gửi dữ liệu về bên phát hành. Nội dung Agent đọc được xử lý bởi mô hình AI qua Claude Code theo tài khoản Claude của bạn.
 - **Bí mật:** chỉ bạn đặt khóa/mật khẩu vào `bi-mat/`. Không dán mật khẩu, mã xác minh vào cửa sổ Claude Code.
-- **Mã bên thứ ba:** agent `edit-video` được phép gọi `npx hyperframes`, lệnh này tải gói từ npm khi chạy. Xem nguồn, giấy phép, cách cố định phiên bản và cách tắt ở mục **Thành phần bên thứ ba** ngay dưới.
+- **Mã bên thứ ba:** agent `edit-video` được phép gọi `npx hyperframes@0.8.137` (đã cố định phiên bản), lệnh này tải gói từ npm khi chạy. Xem nguồn, giấy phép, cách lên phiên bản và cách tắt ở mục **Thành phần bên thứ ba** ngay dưới.
 
 Hook gác cổng là lớp chặn theo luật nhận mẫu; nó không thay được việc bạn duyệt đầu ra trước khi dùng.
 
@@ -183,19 +183,19 @@ Hook gác cổng là lớp chặn theo luật nhận mẫu; nó không thay đư
 | Bên phát hành | HeyGen |
 | Giấy phép | Apache-2.0 |
 | Mã nguồn | https://github.com/heygen-com/hyperframes (thư mục `packages/cli`) |
-| Có nằm trong bộ này không | **Không.** Bộ không kèm và không sửa mã HyperFrames. Bộ chỉ cho phép agent `edit-video` chạy lệnh bắt đầu bằng `npx hyperframes` (khai báo trong `he-thong/ban-do-quyen.json`). |
+| Có nằm trong bộ này không | **Không.** Bộ không kèm và không sửa mã HyperFrames. Bộ chỉ cho phép agent `edit-video` chạy lệnh bắt đầu bằng `npx hyperframes@0.8.137 ` (có dấu cách cuối; khai báo trong `he-thong/ban-do-quyen.json`). |
 
 **Agent `edit-video` dùng để làm gì:** dựng phần chữ, tiêu đề, đồ họa chuyển động bằng HTML rồi xuất thành đoạn video, để ghép vào footage. Phần cắt, nối, khung 9:16, âm lượng và xuất MP4 cuối cùng vẫn do FFmpeg làm.
 
 **Lưu ý khi dùng:**
 - `npx` **tải gói `hyperframes` từ npm** ở lần chạy đầu (cần mạng), kèm các gói phụ thuộc (16 gói khi tra ngày 06/10/2026, trong đó có `puppeteer-core`, `sharp`, `esbuild`). Khi tra, gói không có script tự chạy lúc cài (`postinstall`). Bên phát hành bộ này không kiểm toán mã HyperFrames; bạn có thể tự đọc mã nguồn và giấy phép tại đường dẫn trên.
-- Nếu không ghi số phiên bản, `npx` có thể lấy bản mới hơn theo thời gian, nên kết quả dựng có thể thay đổi.
+- Nếu không ghi số phiên bản, `npx` có thể lấy bản mới hơn theo thời gian, nên kết quả dựng có thể thay đổi. Vì vậy bản này đã cố định phiên bản (xem ngay dưới).
 
-**Khuyến nghị cố định phiên bản** (để kết quả ổn định):
-- Trong brief video, ghi rõ agent dùng `npx hyperframes@0.8.137` (hoặc phiên bản bạn đã thử và chấp nhận).
-- Muốn **bắt buộc** bằng khóa kỹ thuật: mở `he-thong/ban-do-quyen.json` bằng Notepad, trong mục `edit-video` đổi `"npx hyperframes"` thành `"npx hyperframes@0.8.137 "` (có dấu cách cuối), lưu lại, rồi chạy trong PowerShell: `node cong-cu/quan-ly-agent.mjs dau-van-tay`. Khi đó agent chỉ chạy được đúng phiên bản này.
+**Đã cố định phiên bản 0.8.137 ở bản này** (từ 1.1.0, để kết quả ổn định):
+- Trong `he-thong/ban-do-quyen.json`, mục `edit-video`, quyền chạy lệnh là chuỗi `"npx hyperframes@0.8.137 "` (có dấu cách cuối). Gác cổng so khớp theo phần đầu lệnh, nên agent chỉ chạy được đúng `npx hyperframes@0.8.137 ...`. Lệnh `npx hyperframes ...` không ghi phiên bản, hoặc ghi phiên bản khác, sẽ bị chặn. Khi viết brief video, ghi đúng `npx hyperframes@0.8.137`.
+- **Muốn lên phiên bản mới:** mở `he-thong/ban-do-quyen.json` bằng Notepad, trong mục `edit-video` đổi số trong `"npx hyperframes@0.8.137 "` thành phiên bản bạn đã thử và chấp nhận (ví dụ `"npx hyperframes@<phiên bản mới> "`, **giữ dấu cách cuối**), lưu lại, rồi chạy trong PowerShell: `node cong-cu/quan-ly-agent.mjs dau-van-tay`. Nên đọc ghi chú phát hành và giấy phép của bản mới trước khi đổi.
 
-**Cách tắt HyperFrames:** mở `he-thong/ban-do-quyen.json` bằng Notepad, xóa mục `"npx hyperframes"` khỏi danh sách `bash_duoc_phep` của `edit-video` (nhớ xóa cả dấu phẩy thừa), lưu lại, rồi chạy `node cong-cu/quan-ly-agent.mjs dau-van-tay`. Agent `edit-video` vẫn dựng video bình thường bằng FFmpeg (cắt, nối, 9:16, chữ, phụ đề, nhạc, xuất MP4); chỉ không làm được đồ họa HTML. Cách này khác với cho agent nghỉ việc: hoàn tác được bằng cách thêm lại mục đó. (Như mục An toàn đã nêu, quyền riêng từng agent áp dụng khi Claude Code báo tên agent cho hook.)
+**Cách tắt HyperFrames:** mở `he-thong/ban-do-quyen.json` bằng Notepad, xóa mục `"npx hyperframes@0.8.137 "` khỏi danh sách `bash_duoc_phep` của `edit-video` (nhớ xóa cả dấu phẩy thừa), lưu lại, rồi chạy `node cong-cu/quan-ly-agent.mjs dau-van-tay`. Agent `edit-video` vẫn dựng video bình thường bằng FFmpeg (cắt, nối, 9:16, chữ, phụ đề, nhạc, xuất MP4); chỉ không làm được đồ họa HTML. Cách này khác với cho agent nghỉ việc: hoàn tác được bằng cách thêm lại mục đó. (Như mục An toàn đã nêu, quyền riêng từng agent áp dụng khi Claude Code báo tên agent cho hook.)
 
 ## Giấy phép
 

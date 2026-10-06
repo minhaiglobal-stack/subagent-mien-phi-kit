@@ -18,7 +18,8 @@
     {
       "ten": "hyperframes",
       "loai": "Gói npm, gọi qua npx khi chạy; không kèm trong bộ",
-      "phien_ban_khuyen_nghi": "0.8.137",
+      "phien_ban_co_dinh": "0.8.137",
+      "co_dinh_tai": "he-thong/ban-do-quyen.json, edit-video.bash_duoc_phep: \"npx hyperframes@0.8.137 \" (lên bản mới: chủ sửa chuỗi rồi chạy node cong-cu/quan-ly-agent.mjs dau-van-tay)",
       "ben_phat_hanh": "HeyGen",
       "giay_phep": "Apache-2.0",
       "ma_nguon": "https://github.com/heygen-com/hyperframes",

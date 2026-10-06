@@ -45,7 +45,7 @@ Chạy từng lệnh, ghi lại kết quả:
 | Lệnh | Đạt khi | Bắt buộc | Lệnh cài đề xuất (Windows, nguồn chính thức qua winget) |
 |---|---|---|---|
 | `node --version` | In ra `v18` trở lên (ví dụ `v22.11.0`) | Có | `winget install --id OpenJS.NodeJS.LTS -e --accept-source-agreements --accept-package-agreements` |
-| `git --version` | In ra `git version ...` | Nên có (cách tải chính) | `winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements` |
+| `git --version` | In ra `git version ...` | Có (Claude Code trên Windows cần Git Bash; nếu khách từ chối cài thì vẫn tải bộ được bằng bản nén, mục 2.3) | `winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements` |
 | `ffmpeg -version` | Dòng đầu bắt đầu bằng `ffmpeg version` | Cần cho agent dựng video | `winget install --id Gyan.FFmpeg -e --accept-source-agreements --accept-package-agreements` |
 
 Báo người dùng một bảng ngắn: cái nào **đã có**, cái nào **thiếu**.
