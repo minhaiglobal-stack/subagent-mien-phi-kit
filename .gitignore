@@ -1,0 +1,32 @@
+# Bí mật: không bao giờ đưa lên mạng
+bi-mat/
+.env
+.env.*
+*.pem
+id_rsa*
+id_ed25519*
+
+# Dữ liệu vận hành sinh ra khi dùng (riêng của từng doanh nghiệp).
+# Trình cài cong-cu/cai-dat.mjs tự tạo lại các thư mục này.
+he-thong/cau-hinh.json
+he-thong/registry.json
+he-thong/.dau-van-tay.json
+.claude/agents/
+.claude/agents-khoa/
+.claude/settings.local.json
+nhat-ky/
+hang-doi/
+ban-giao/
+hop-nhan-viec/
+bao-cao/
+de-xuat/
+luu-tru/
+DUNG_KHAN
+
+# Tệp đóng gói và rác hệ điều hành
+dist/
+node_modules/
+.DS_Store
+Thumbs.db
+*.mp4
+*.mov

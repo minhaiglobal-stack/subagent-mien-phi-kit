@@ -1,0 +1,23 @@
+{
+  "phien_ban": "2.0.0",
+  "cap": 1,
+  "chu_so_huu": "",
+  "mui_gio": "Asia/Ho_Chi_Minh",
+  "gio_hoat_dong": { "bat_dau": "08:00", "ket_thuc": "22:00" },
+  "han_muc": {
+    "thao_tac_moi_ngay": 2000,
+    "giao_viec_moi_ngay": 200,
+    "thu_lai_toi_da": 2,
+    "chi_phi_usd_moi_ngay": 5
+  },
+  "cho_phep_web": true,
+  "duong_dan_doc_them": [],
+  "agent_he_thong_cho_phep": ["Explore", "Plan"],
+  "mcp_duoc_phep": [],
+  "thuong_hieu": {
+    "ten": "",
+    "xung_ho": "em",
+    "goi_khach": "anh/chị",
+    "chu_ky": ""
+  }
+}

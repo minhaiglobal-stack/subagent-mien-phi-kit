@@ -1,0 +1,42 @@
+{
+  "_ghi_chu": "Danh mục nhân sự bản dùng thử: chỉ cấp 1 (tối giản, 4 vị trí).",
+  "agent-tong": {
+    "cap": 1, "tep": null,
+    "chuc_danh": "Tổng Giám đốc điều hành (COO) kiêm Văn phòng dự án",
+    "tuyen": "Điều hành",
+    "nang_luc": "Nhận việc, tạo job, giao đúng agent, theo dõi, bàn giao, báo cáo chủ",
+    "tang_tu_chu": "co_giam_sat",
+    "trang_thai_ban_dau": "chinh_thuc",
+    "kpi": { "viec_ban_giao_dung_han": ">=90%", "phieu_duyet_moi_ngay": "<=10" }
+  },
+  "kiem-dinh-chat-luong": {
+    "cap": 1, "tep": "cap-1/kiem-dinh-chat-luong.md",
+    "chuc_danh": "Trưởng phòng QA/QC (độc lập với điều hành)",
+    "tuyen": "Tuyến 2 - Kiểm soát",
+    "nang_luc": "Chấm đầu ra theo quality gate, lập biên bản có bằng chứng",
+    "tang_tu_chu": "tu_dong",
+    "trang_thai_ban_dau": "chinh_thuc",
+    "quality_gate": null,
+    "kpi": { "ty_le_bo_sot_loi": "0 lỗi lọt tới chủ / tháng" }
+  },
+  "edit-video": {
+    "cap": 1, "tep": "cap-1/edit-video.md",
+    "chuc_danh": "Biên tập viên hậu kỳ video",
+    "tuyen": "Tuyến 1 - Sản xuất",
+    "nang_luc": "Dựng video dọc 9:16 từ footage và brief",
+    "tang_tu_chu": "co_giam_sat",
+    "trang_thai_ban_dau": "thu_viec",
+    "quality_gate": "video-9x16.json",
+    "kpi": { "dat_qg_lan_dau": ">=80%", "su_co": "0" }
+  },
+  "cskh-soan-nhap": {
+    "cap": 1, "tep": "cap-1/cskh-soan-nhap.md",
+    "chuc_danh": "Nhân viên Chăm sóc khách hàng (soạn nháp)",
+    "tuyen": "Tuyến 1 - Sản xuất",
+    "nang_luc": "Soạn bản nháp trả lời tin nhắn khách, đánh dấu ca phải chuyển chủ",
+    "tang_tu_chu": "duyet_truoc_buoc_cuoi",
+    "trang_thai_ban_dau": "thu_viec",
+    "quality_gate": "cskh-tin-nhan.json",
+    "kpi": { "dat_qg_lan_dau": ">=90%", "bo_sot_ca_chuyen_chu": "0" }
+  }
+}

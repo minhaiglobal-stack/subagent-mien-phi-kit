@@ -1,0 +1,27 @@
+{
+  "_ghi_chu": "Bản đồ quyền (Delegation of Authority). Chỉ chủ sở hữu sửa. Gác cổng đọc tệp này: 'ghi_duoc' giới hạn nơi agent được ghi; 'bash' false = không chạy lệnh; 'bash_duoc_phep' = chỉ các lệnh bắt đầu bằng tiền tố này. Gác cổng chỉ áp dụng được theo từng agent khi Claude Code báo tên agent trong hook; luật chung luôn áp dụng.",
+  "tang_tu_chu": {
+    "tu_dong": "Đầu vào rõ, thao tác hoàn tác được, không phát sinh phí, quality gate đo được.",
+    "co_giam_sat": "Agent chạy và báo tiến trình; chủ chỉ xem.",
+    "duyet_truoc_buoc_cuoi": "Đăng bài, gửi tin, xuất bản, chia sẻ, trả phí, đổi quyền.",
+    "chu_truc_tiep": "Đăng nhập, OTP, CAPTCHA, mật khẩu, xác minh danh tính, thanh toán."
+  },
+  "ma_tran": [
+    { "hanh_dong": "Đọc dữ liệu trong công xưởng", "agent_con": "Tự làm", "agent_tong": "Tự làm", "chu": "-" },
+    { "hanh_dong": "Tạo bản nháp, tệp mới trong ban-giao/", "agent_con": "Tự làm", "agent_tong": "Tự làm", "chu": "-" },
+    { "hanh_dong": "Thử lại khi lỗi", "agent_con": "Tối đa 2 lần", "agent_tong": "Tối đa 1 vòng giao lại", "chu": "Nhận báo cáo khi hết lượt" },
+    { "hanh_dong": "Gửi tin/đăng bài/bình luận thay mặt", "agent_con": "Cấm", "agent_tong": "Chuẩn bị bản nháp", "chu": "Duyệt từng lần hoặc mẫu" },
+    { "hanh_dong": "Cam kết, giảm giá, hoàn tiền", "agent_con": "Cấm", "agent_tong": "Cấm", "chu": "Tự quyết" },
+    { "hanh_dong": "Xóa dữ liệu", "agent_con": "Cấm", "agent_tong": "Cấm", "chu": "Tự làm" },
+    { "hanh_dong": "Cài phần mềm, phát sinh phí", "agent_con": "Cấm", "agent_tong": "Đề xuất", "chu": "Duyệt" },
+    { "hanh_dong": "Đổi quyền, quality gate, registry", "agent_con": "Cấm", "agent_tong": "Đề xuất", "chu": "Duyệt và tự chạy công cụ" },
+    { "hanh_dong": "Thêm agent mới", "agent_con": "-", "agent_tong": "Đề xuất hồ sơ", "chu": "Duyệt" },
+    { "hanh_dong": "Khóa agent con", "agent_con": "-", "agent_tong": "Được khóa tạm", "chu": "Quyết định mở/cho nghỉ" },
+    { "hanh_dong": "Dừng khẩn toàn hệ thống", "agent_con": "-", "agent_tong": "Được bật", "chu": "Bật và tắt" }
+  ],
+  "agents": {
+    "kiem-dinh-chat-luong": { "ghi_duoc": ["ban-giao/bang-chung/", "hang-doi/"], "bash_duoc_phep": ["node cong-cu/kiem-dinh", "node cong-cu/job.mjs", "ffprobe", "ffmpeg -hide_banner -i", "ffmpeg -i"] },
+    "edit-video": { "ghi_duoc": ["ban-giao/", "hang-doi/"], "bash_duoc_phep": ["ffmpeg", "ffprobe", "node cong-cu/job.mjs", "node cong-cu/kiem-dinh-video.mjs", "npx hyperframes", "ls", "mkdir"] },
+    "cskh-soan-nhap": { "ghi_duoc": ["ban-giao/nhap/", "hang-doi/"], "bash": false }
+  }
+}

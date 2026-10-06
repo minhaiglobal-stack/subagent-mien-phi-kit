@@ -1,0 +1,24 @@
+{
+  "ma": "qg-video-9x16",
+  "phien_ban": "1.0.0",
+  "mo_ta": "Video dọc ngắn cho TikTok/Reels/Shorts",
+  "ky_thuat": {
+    "rong": 1080,
+    "cao": 1920,
+    "codec_hinh": ["h264", "hevc"],
+    "codec_tieng": ["aac", "mp3", "opus"],
+    "bat_buoc_co_tieng": true,
+    "thoi_luong_giay": { "min": 5, "max": 180 },
+    "fps": { "min": 24, "max": 60 },
+    "bitrate_kbps": { "min": 1500, "max": 20000 },
+    "do_on_lufs": { "min": -17, "max": -11 },
+    "dung_luong_mb_toi_da": 287
+  },
+  "thu_cong": [
+    "Đúng brief: đủ ý chính, đúng đối tượng",
+    "Chữ/phụ đề nằm trong vùng an toàn (cách mép trên 250px, mép dưới 400px)",
+    "Logo, màu, font đúng hồ sơ thương hiệu trong bo-nho/",
+    "Nhạc/footage có nguồn hợp lệ (ghi nguồn trong tệp job)",
+    "Không lộ thông tin cá nhân, số điện thoại, biển số xe không cần thiết"
+  ]
+}

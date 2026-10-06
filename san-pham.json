@@ -1,0 +1,40 @@
+{
+  "ma": "MIEN-PHI-KIT",
+  "ten": "Công xưởng SubAgent - Bản dùng thử cấp 1 (tự cài, 1 doanh nghiệp)",
+  "phien_ban": "1.0.0",
+  "nganh": "Đa ngành - doanh nghiệp nhỏ và vừa (SME)",
+  "mo_ta_ngan": "Bản dùng thử miễn phí cấp 1 của Công xưởng SubAgent: Agent Tổng điều hành 3 Agent con (QA, Edit Video, CSKH soạn nháp) chạy bằng Claude Code trên máy của doanh nghiệp, giữ nguyên hook gác cổng, duyệt trước khi đăng/gửi, nhật ký chuỗi băm và nút dừng khẩn. Tự cài theo 3 bước.",
+  "goi_gia": "MIEN-PHI-KIT",
+  "giay_phep": "Dùng thử miễn phí cho 1 doanh nghiệp, không bán lại, không phân phối lại (xem LICENSE.md)",
+  "yeu_cau_may": [
+    "Windows 10/11 (macOS/Linux chạy được nhưng README hướng dẫn cho Windows)",
+    "Node.js 18+ (khuyên 22 LTS)",
+    "Claude Code và tài khoản Claude có gói trả phí hoặc tài khoản API (khách tự trả cho Anthropic)",
+    "Git for Windows (Claude Code trên Windows cần Git Bash)",
+    "FFmpeg (có ffprobe) khi dựng video"
+  ],
+  "cap": 1,
+  "vi_tri": ["agent-tong", "kiem-dinh-chat-luong", "edit-video", "cskh-soan-nhap"],
+  "nguon": { "san_pham": "cong-xuong-subagent", "phien_ban": "2.0.1" },
+  "thuong_hieu": "Giải pháp SubAgent Business",
+  "khau_hieu": "Liên tục Tiến Lên",
+  "ho_tro": {
+    "zalo": "0963124791",
+    "telegram": "0963124791",
+    "dien_thoai": "0963124791",
+    "email": "minhaiglobal@gmail.com",
+    "fanpage": "https://www.facebook.com/profile.php?id=61595252995765",
+    "youtube": "https://www.youtube.com/@subagentbusiness",
+    "tiktok": "https://www.tiktok.com/@camsellerai",
+    "github": "https://github.com/minhaiglobal-stack"
+  },
+  "tep_cot_loi": [
+    "CLAUDE.md",
+    ".claude/settings.json",
+    ".claude/hooks/gac-cong.mjs",
+    "cong-cu/cai-dat.mjs",
+    "cong-cu/kiem-tra.mjs",
+    "mau-agent/danh-muc.json",
+    "he-thong/ban-do-quyen.json"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "ma": "qg-cskh-tin-nhan",
+  "phien_ban": "1.0.0",
+  "mo_ta": "Bản nháp trả lời tin nhắn khách hàng",
+  "do_dai_toi_da": 600,
+  "tu_khoa_bat_buoc_chuyen_chu": ["khiếu nại", "khieu nai", "hoàn tiền", "hoan tien", "trả hàng", "tra hang", "đổi trả", "doi tra", "giảm giá", "giam gia", "bồi thường", "boi thuong", "luật sư", "luat su", "công an", "cong an", "kiện", "lừa đảo", "lua dao", "gặp người thật", "gặp quản lý", "tố cáo", "hủy đơn", "huy don", "chuyển khoản lại"],
+  "cum_tu_cam_trong_nhap": ["cam kết", "đảm bảo 100%", "chắc chắn hoàn", "sẽ hoàn tiền", "giảm giá cho", "miễn phí cho", "bồi thường", "tặng thêm", "freeship cho", "chuyển khoản vào số", "số tài khoản", "mật khẩu", "mã OTP"],
+  "dau_hieu_tan_cong": ["bỏ qua hướng dẫn", "bo qua huong dan", "ignore previous", "ignore all", "system prompt", "bạn là AI", "hãy đóng vai", "gửi cho tôi danh sách", "xuất dữ liệu", "quên các quy tắc"],
+  "thu_cong": [
+    "Xưng hô và giọng đúng hồ sơ thương hiệu",
+    "Trả lời đúng câu hỏi, không bịa thông tin đơn hàng",
+    "Có bước tiếp theo rõ ràng cho khách"
+  ]
+}
