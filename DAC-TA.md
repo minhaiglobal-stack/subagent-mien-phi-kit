@@ -1,10 +1,12 @@
-# ĐẶC TẢ — MIEN-PHI-KIT 1.0.0 (Bản dùng thử cấp 1)
+# ĐẶC TẢ — MIEN-PHI-KIT 1.0.1 (Bản dùng thử cấp 1)
+
+*1.0.1 (06/10/2026): bản vá tài liệu, không đổi mã/quyền; thêm mục Thành phần bên thứ ba (HyperFrames) ở README, `san-pham.json` và cuối đặc tả này. Danh sách "Tệp khác bản 2.0.1" bên dưới vẫn đúng cho phần mã.*
 
 **Vấn đề.** Chủ doanh nghiệp nhỏ muốn thử nhân sự AI có kiểm soát trước khi trả tiền cài đặt, nhưng cần một bộ tự cài được, an toàn, không lộ dữ liệu.
 
 **Khách.** Chủ shop/doanh nghiệp nhỏ dùng Windows, một người vận hành, không rành kỹ thuật; có hoặc sẵn sàng mua thuê bao Claude.
 
-**Đầu ra.** Thư mục `mien-phi-kit/` (và tệp nén `dist/mien-phi-kit-1.0.0.zip`) gồm Công xưởng SubAgent cấp 1: Agent Tổng, QA, Edit Video, CSKH soạn nháp; hook gác cổng, nhật ký chuỗi băm, dừng khẩn, hàng đợi job, quality gate video/CSKH; README cài 3 bước cho Windows; hồ sơ và bảng giá mẫu trống; giấy phép dùng thử.
+**Đầu ra.** Thư mục `mien-phi-kit/` (và tệp nén `dist/mien-phi-kit-<phiên bản>.zip`, bản 1.0.1 cần đóng gói lại) gồm Công xưởng SubAgent cấp 1: Agent Tổng, QA, Edit Video, CSKH soạn nháp; hook gác cổng, nhật ký chuỗi băm, dừng khẩn, hàng đợi job, quality gate video/CSKH; README cài 3 bước cho Windows; hồ sơ và bảng giá mẫu trống; giấy phép dùng thử.
 
 **Nguồn.** `san-pham/cong-xuong-subagent` bản 2.0.1. Mã lớp an toàn giữ nguyên.
 
@@ -20,3 +22,6 @@
 - Không nêu giá gói trả phí, không hứa kết quả kinh doanh.
 - Khách tự trả thuê bao Claude. Bộ không gửi dữ liệu về bên phát hành.
 - Dùng cho 1 doanh nghiệp, không bán lại.
+
+**Thành phần bên thứ ba.**
+- `hyperframes` (gói npm, HeyGen, giấy phép Apache-2.0, mã nguồn https://github.com/heygen-com/hyperframes). Không kèm trong bộ; agent `edit-video` được phép gọi `npx hyperframes` (tải từ npm khi chạy, cần mạng) để dựng đồ họa HTML. Khuyến nghị khách cố định `npx hyperframes@0.8.137`. Tắt được bằng cách bỏ quyền trong `he-thong/ban-do-quyen.json`; khi đó vẫn dựng bằng FFmpeg. Tra cứu ngày 06/10/2026.

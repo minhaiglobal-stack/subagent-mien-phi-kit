@@ -1,7 +1,7 @@
 {
   "ma": "MIEN-PHI-KIT",
   "ten": "Công xưởng SubAgent - Bản dùng thử cấp 1 (tự cài, 1 doanh nghiệp)",
-  "phien_ban": "1.0.0",
+  "phien_ban": "1.0.1",
   "nganh": "Đa ngành - doanh nghiệp nhỏ và vừa (SME)",
   "mo_ta_ngan": "Bản dùng thử miễn phí cấp 1 của Công xưởng SubAgent: Agent Tổng điều hành 3 Agent con (QA, Edit Video, CSKH soạn nháp) chạy bằng Claude Code trên máy của doanh nghiệp, giữ nguyên hook gác cổng, duyệt trước khi đăng/gửi, nhật ký chuỗi băm và nút dừng khẩn. Tự cài theo 3 bước.",
   "goi_gia": "MIEN-PHI-KIT",
@@ -11,7 +11,20 @@
     "Node.js 18+ (khuyên 22 LTS)",
     "Claude Code và tài khoản Claude có gói trả phí hoặc tài khoản API (khách tự trả cho Anthropic)",
     "Git for Windows (Claude Code trên Windows cần Git Bash)",
-    "FFmpeg (có ffprobe) khi dựng video"
+    "FFmpeg (có ffprobe) khi dựng video",
+    "Mạng internet khi agent edit-video chạy npx hyperframes (tùy chọn)"
+  ],
+  "thanh_phan_ben_thu_ba": [
+    {
+      "ten": "hyperframes",
+      "loai": "Gói npm, gọi qua npx khi chạy; không kèm trong bộ",
+      "phien_ban_khuyen_nghi": "0.8.137",
+      "ben_phat_hanh": "HeyGen",
+      "giay_phep": "Apache-2.0",
+      "ma_nguon": "https://github.com/heygen-com/hyperframes",
+      "dung_cho": "edit-video: dựng chữ/đồ họa chuyển động bằng HTML; tắt được, khi đó dựng bằng FFmpeg",
+      "ngay_tra_cuu": "2026-10-06"
+    }
   ],
   "cap": 1,
   "vi_tri": ["agent-tong", "kiem-dinh-chat-luong", "edit-video", "cskh-soan-nhap"],

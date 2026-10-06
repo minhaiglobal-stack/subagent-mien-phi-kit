@@ -1,5 +1,13 @@
 # CHANGELOG — Công xưởng SubAgent, bản dùng thử cấp 1 (MIEN-PHI-KIT)
 
+## 1.0.1 — 2026-10-06
+
+Bản vá tài liệu (không đổi mã, không đổi quyền). Ghi rõ nguồn và giấy phép của thành phần bên thứ ba mà agent `edit-video` được phép gọi (`npx hyperframes`), đồng bộ với Công xưởng SubAgent 2.0.2.
+
+- `README.md`: thêm mục **Thành phần bên thứ ba** (HyperFrames: là gì, bên phát hành HeyGen, giấy phép Apache-2.0, mã nguồn https://github.com/heygen-com/hyperframes, agent `edit-video` dùng để làm gì, `npx` tải gói từ npm khi chạy, khuyến nghị cố định `npx hyperframes@0.8.137`, cách tắt mà vẫn dựng bằng FFmpeg); thêm một dòng ở mục An toàn và một dòng "Mạng internet khi chạy HyperFrames (tùy chọn)" ở bảng yêu cầu máy; số phiên bản 1.0.1; tên tệp nén ghi chung `mien-phi-kit-<phiên bản>.zip`.
+- `san-pham.json`: `phien_ban` 1.0.1; thêm yêu cầu máy tùy chọn về mạng khi dùng HyperFrames; thêm trường `thanh_phan_ben_thu_ba`. Trường `nguon` giữ 2.0.1 (mã lấy từ 2.0.1; 2.0.2 chỉ vá tài liệu).
+- `DAC-TA.md`: ghi phiên bản 1.0.1 và thêm mục Thành phần bên thứ ba.
+
 ## 1.0.0 — 2026-10-06
 
 Bản dùng thử miễn phí đầu tiên, đóng gói từ Công xưởng SubAgent 2.0.1.

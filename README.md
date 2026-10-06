@@ -1,6 +1,6 @@
 # Công xưởng SubAgent — Bản dùng thử cấp 1 (miễn phí)
 
-Sản phẩm của **Giải pháp SubAgent Business** — *Liên tục Tiến Lên*. Phiên bản 1.0.0. Giấy phép: dùng thử miễn phí cho 1 doanh nghiệp, không bán lại (xem mục Giấy phép).
+Sản phẩm của **Giải pháp SubAgent Business** — *Liên tục Tiến Lên*. Phiên bản 1.0.1. Giấy phép: dùng thử miễn phí cho 1 doanh nghiệp, không bán lại (xem mục Giấy phép).
 
 ## Giới thiệu
 
@@ -29,13 +29,14 @@ Bộ hợp với người mới bắt đầu, một người vận hành. Bản 
 | Claude Code | Có | Làm theo hướng dẫn chính thức tại https://claude.com/claude-code (hoặc sau khi có Node.js: `npm install -g @anthropic-ai/claude-code`) |
 | Tài khoản Claude | Có | Gói trả phí của Claude hoặc tài khoản API. **Bạn tự đăng ký và tự trả thuê bao trực tiếp cho Anthropic.** Bộ dùng thử miễn phí nhưng không bao gồm phí này. |
 | FFmpeg (có ffprobe) | Khi dựng video | `winget install --id Gyan.FFmpeg -e` |
+| Mạng internet khi chạy HyperFrames | Không (tùy chọn) | Không cần cài trước; xem mục **Thành phần bên thứ ba** |
 
 Cài xong phần mềm, **đóng và mở lại** cửa sổ PowerShell để máy nhận lệnh mới. Công cụ trong bộ chỉ dùng thư viện có sẵn của Node.js, không cần `npm install`.
 
 ### Cài 3 bước
 
 **Bước 1. Giải nén và mở PowerShell tại thư mục**
-Giải nén tệp `mien-phi-kit-1.0.0.zip` (chuột phải, chọn *Extract All*) vào nơi dễ tìm, ví dụ `D:\SubAgent\`. Mở thư mục `mien-phi-kit`, bấm vào thanh địa chỉ phía trên, gõ `powershell` rồi nhấn Enter.
+Giải nén tệp `mien-phi-kit-<phiên bản>.zip` bạn đã tải về (ví dụ `mien-phi-kit-1.0.1.zip`; chuột phải, chọn *Extract All*) vào nơi dễ tìm, ví dụ `D:\SubAgent\`. Mở thư mục `mien-phi-kit`, bấm vào thanh địa chỉ phía trên, gõ `powershell` rồi nhấn Enter.
 
 **Bước 2. Chạy trình cài**
 Dán lệnh sau vào PowerShell, sửa tên của bạn và tên doanh nghiệp, nhấn Enter:
@@ -72,7 +73,7 @@ winget install --id Gyan.FFmpeg -e
 
 Cài xong, **đóng và mở lại** cửa sổ PowerShell rồi chạy lại `node cong-cu/kiem-tra.mjs`.
 
-Nếu bạn chắc chắn không dựng video, bạn có thể cho agent video nghỉ: `node cong-cu/quan-ly-agent.mjs nghi-viec edit-video`. **Lưu ý: đây là thao tác một chiều.** Bộ chưa có lệnh bật lại agent đã nghỉ, và chạy lại `cai-dat.mjs` trong cùng thư mục cũng **không** thêm lại agent này. Muốn dùng lại agent video, bạn phải cài lại bằng `cai-dat.mjs` trên một bản giải nén mới (giải nén `mien-phi-kit-1.0.0.zip` vào thư mục khác). Bản cài mới không có job, nhật ký và bàn giao của bản cũ.
+Nếu bạn chắc chắn không dựng video, bạn có thể cho agent video nghỉ: `node cong-cu/quan-ly-agent.mjs nghi-viec edit-video`. **Lưu ý: đây là thao tác một chiều.** Bộ chưa có lệnh bật lại agent đã nghỉ, và chạy lại `cai-dat.mjs` trong cùng thư mục cũng **không** thêm lại agent này. Muốn dùng lại agent video, bạn phải cài lại bằng `cai-dat.mjs` trên một bản giải nén mới (giải nén lại tệp `mien-phi-kit-<phiên bản>.zip` vào thư mục khác). Bản cài mới không có job, nhật ký và bàn giao của bản cũ.
 
 ## Cách dùng
 
@@ -140,8 +141,34 @@ bi-mat/                   Chỉ chủ dùng; Agent bị chặn đọc
 - **Hàng đợi và quality gate:** job chống làm trùng, giới hạn số lần thử lại, chỉ chuyển "đạt/bàn giao" khi có biên bản QA.
 - **Dữ liệu:** công cụ và dữ liệu nằm trên máy của bạn; bộ không nhúng khóa API và không gửi dữ liệu về bên phát hành. Nội dung Agent đọc được xử lý bởi mô hình AI qua Claude Code theo tài khoản Claude của bạn.
 - **Bí mật:** chỉ bạn đặt khóa/mật khẩu vào `bi-mat/`. Không dán mật khẩu, mã xác minh vào cửa sổ Claude Code.
+- **Mã bên thứ ba:** agent `edit-video` được phép gọi `npx hyperframes`, lệnh này tải gói từ npm khi chạy. Xem nguồn, giấy phép, cách cố định phiên bản và cách tắt ở mục **Thành phần bên thứ ba** ngay dưới.
 
 Hook gác cổng là lớp chặn theo luật nhận mẫu; nó không thay được việc bạn duyệt đầu ra trước khi dùng.
+
+## Thành phần bên thứ ba
+
+### HyperFrames (tùy chọn, dùng cho agent `edit-video`)
+
+| Mục | Thông tin |
+|---|---|
+| Là gì | Công cụ dòng lệnh để tạo, xem trước và xuất (render) video từ bố cục HTML ("HyperFrames CLI — create, preview, and render HTML video compositions") |
+| Gói npm | `hyperframes` (bản mới nhất khi tra ngày 06/10/2026: `0.8.137`) |
+| Bên phát hành | HeyGen |
+| Giấy phép | Apache-2.0 |
+| Mã nguồn | https://github.com/heygen-com/hyperframes (thư mục `packages/cli`) |
+| Có nằm trong bộ này không | **Không.** Bộ không kèm và không sửa mã HyperFrames. Bộ chỉ cho phép agent `edit-video` chạy lệnh bắt đầu bằng `npx hyperframes` (khai báo trong `he-thong/ban-do-quyen.json`). |
+
+**Agent `edit-video` dùng để làm gì:** dựng phần chữ, tiêu đề, đồ họa chuyển động bằng HTML rồi xuất thành đoạn video, để ghép vào footage. Phần cắt, nối, khung 9:16, âm lượng và xuất MP4 cuối cùng vẫn do FFmpeg làm.
+
+**Lưu ý khi dùng:**
+- `npx` **tải gói `hyperframes` từ npm** ở lần chạy đầu (cần mạng), kèm các gói phụ thuộc (16 gói khi tra ngày 06/10/2026, trong đó có `puppeteer-core`, `sharp`, `esbuild`). Khi tra, gói không có script tự chạy lúc cài (`postinstall`). Bên phát hành bộ này không kiểm toán mã HyperFrames; bạn có thể tự đọc mã nguồn và giấy phép tại đường dẫn trên.
+- Nếu không ghi số phiên bản, `npx` có thể lấy bản mới hơn theo thời gian, nên kết quả dựng có thể thay đổi.
+
+**Khuyến nghị cố định phiên bản** (để kết quả ổn định):
+- Trong brief video, ghi rõ agent dùng `npx hyperframes@0.8.137` (hoặc phiên bản bạn đã thử và chấp nhận).
+- Muốn **bắt buộc** bằng khóa kỹ thuật: mở `he-thong/ban-do-quyen.json` bằng Notepad, trong mục `edit-video` đổi `"npx hyperframes"` thành `"npx hyperframes@0.8.137 "` (có dấu cách cuối), lưu lại, rồi chạy trong PowerShell: `node cong-cu/quan-ly-agent.mjs dau-van-tay`. Khi đó agent chỉ chạy được đúng phiên bản này.
+
+**Cách tắt HyperFrames:** mở `he-thong/ban-do-quyen.json` bằng Notepad, xóa mục `"npx hyperframes"` khỏi danh sách `bash_duoc_phep` của `edit-video` (nhớ xóa cả dấu phẩy thừa), lưu lại, rồi chạy `node cong-cu/quan-ly-agent.mjs dau-van-tay`. Agent `edit-video` vẫn dựng video bình thường bằng FFmpeg (cắt, nối, 9:16, chữ, phụ đề, nhạc, xuất MP4); chỉ không làm được đồ họa HTML. Cách này khác với cho agent nghỉ việc: hoàn tác được bằng cách thêm lại mục đó. (Như mục An toàn đã nêu, quyền riêng từng agent áp dụng khi Claude Code báo tên agent cho hook.)
 
 ## Giấy phép
 
