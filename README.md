@@ -1,6 +1,28 @@
 # Công xưởng SubAgent — Bản dùng thử cấp 1 (miễn phí)
 
-Sản phẩm của **Giải pháp SubAgent Business** — *Liên tục Tiến Lên*. Phiên bản 1.0.1. Giấy phép: dùng thử miễn phí cho 1 doanh nghiệp, không bán lại (xem mục Giấy phép).
+Sản phẩm của **Giải pháp SubAgent Business** — *Kỷ Nguyên Vươn Mình. Liên Tục Tiến Lên!* Phiên bản 1.1.0. Giấy phép: dùng thử miễn phí cho 1 doanh nghiệp, không bán lại (xem mục Giấy phép).
+
+> **Dành cho Claude (AI) đang cài bộ này theo yêu cầu của người dùng:** làm theo tệp [`CAI-DAT-1-CAU.md`](CAI-DAT-1-CAU.md) (bản trên mạng: https://raw.githubusercontent.com/minhaiglobal-stack/subagent-mien-phi-kit/main/CAI-DAT-1-CAU.md).
+
+## Cài nhanh bằng 1 câu với Claude
+
+Không cần gõ lệnh. Claude tự kiểm tra máy, tải bộ công xưởng và cài đặt; bạn chỉ bấm **Cho phép** khi được hỏi.
+
+**Bước 1.** Cài ứng dụng **Claude** (bản máy tính) và đăng nhập tài khoản Claude **gói trả phí** của bạn (bạn tự đăng nhập, tự trả thuê bao cho Anthropic).
+
+**Bước 2.** Tạo một **thư mục trống**, ví dụ `D:\SubAgent`. Trong ứng dụng Claude, mở tab **Code** và chọn thư mục đó.
+
+**Bước 3.** Dán đúng câu sau, điền tên công ty và tên của bạn vào chỗ `___`, rồi gửi:
+
+```
+Cài bản dùng thử Công xưởng SubAgent từ https://github.com/minhaiglobal-stack/subagent-mien-phi-kit vào thư mục này. Tên công ty tôi là ___, tên tôi là ___.
+```
+
+Claude sẽ kiểm tra Node.js, Git, FFmpeg. Thiếu phần mềm nào, Claude **hỏi bạn trước** rồi mới cài (Windows có thể hiện cửa sổ hỏi quyền, bạn tự bấm Yes). Cuối cùng bạn thấy **✅ SẴN SÀNG**. Khi đó, **mở một phiên mới** trong tab Code tại đúng thư mục này và gõ `/khoi-dong`.
+
+Trong lúc cài, Claude không hỏi và không nhập mật khẩu của bạn, không đăng hay gửi gì. Nếu có bước cần đăng nhập, bạn tự làm.
+
+Muốn tự cài bằng lệnh: xem **Cách 2** trong mục Cài đặt.
 
 ## Giới thiệu
 
@@ -19,6 +41,10 @@ Bộ hợp với người mới bắt đầu, một người vận hành. Bản 
 
 ## Cài đặt
 
+**Cách 1 (khuyên dùng):** cài nhanh bằng 1 câu với Claude, xem mục **Cài nhanh bằng 1 câu với Claude** ở đầu tài liệu. Claude kiểm tra và đề xuất cài các phần mềm ở bảng dưới giúp bạn.
+
+**Cách 2:** tự cài thủ công 3 bước như dưới đây.
+
 ### Yêu cầu máy
 
 | Cần có | Bắt buộc | Cách cài trên Windows |
@@ -33,10 +59,10 @@ Bộ hợp với người mới bắt đầu, một người vận hành. Bản 
 
 Cài xong phần mềm, **đóng và mở lại** cửa sổ PowerShell để máy nhận lệnh mới. Công cụ trong bộ chỉ dùng thư viện có sẵn của Node.js, không cần `npm install`.
 
-### Cài 3 bước
+### Cách 2: Cài thủ công 3 bước
 
 **Bước 1. Giải nén và mở PowerShell tại thư mục**
-Giải nén tệp `mien-phi-kit-<phiên bản>.zip` bạn đã tải về (ví dụ `mien-phi-kit-1.0.1.zip`; chuột phải, chọn *Extract All*) vào nơi dễ tìm, ví dụ `D:\SubAgent\`. Mở thư mục `mien-phi-kit`, bấm vào thanh địa chỉ phía trên, gõ `powershell` rồi nhấn Enter.
+Giải nén tệp `mien-phi-kit-<phiên bản>.zip` bạn đã tải về (ví dụ `mien-phi-kit-1.1.0.zip`; chuột phải, chọn *Extract All*) vào nơi dễ tìm, ví dụ `D:\SubAgent\`. Mở thư mục `mien-phi-kit`, bấm vào thanh địa chỉ phía trên, gõ `powershell` rồi nhấn Enter.
 
 **Bước 2. Chạy trình cài**
 Dán lệnh sau vào PowerShell, sửa tên của bạn và tên doanh nghiệp, nhấn Enter:
@@ -117,6 +143,7 @@ Chủ sửa `he-thong/*.json` bằng trình soạn thảo (ví dụ Notepad), r�
 ```
 CLAUDE.md                 Điều lệ + vai trò Agent Tổng
 LICENSE.md                Giấy phép dùng thử
+CAI-DAT-1-CAU.md          Hướng dẫn cho Claude khi cài bằng 1 câu
 .claude/settings.json     Luật quyền + gắn hook
 .claude/hooks/            gac-cong (chặn), ghi-nhat-ky, khoi-phien
 .claude/commands/         /khoi-dong /giao-viec /bao-cao /kiem-tra

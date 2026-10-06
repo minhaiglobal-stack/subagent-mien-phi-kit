@@ -1,4 +1,6 @@
-# ĐẶC TẢ — MIEN-PHI-KIT 1.0.1 (Bản dùng thử cấp 1)
+# ĐẶC TẢ — MIEN-PHI-KIT 1.1.0 (Bản dùng thử cấp 1)
+
+*1.1.0 (06/10/2026): thêm cài bằng 1 câu với Claude (tệp mới `CAI-DAT-1-CAU.md`, mục mới đầu README), đổi khẩu hiệu. Không đổi mã/quyền. Xem mục "Cài bằng 1 câu" cuối đặc tả.*
 
 *1.0.1 (06/10/2026): bản vá tài liệu, không đổi mã/quyền; thêm mục Thành phần bên thứ ba (HyperFrames) ở README, `san-pham.json` và cuối đặc tả này. Danh sách "Tệp khác bản 2.0.1" bên dưới vẫn đúng cho phần mã.*
 
@@ -25,3 +27,9 @@
 
 **Thành phần bên thứ ba.**
 - `hyperframes` (gói npm, HeyGen, giấy phép Apache-2.0, mã nguồn https://github.com/heygen-com/hyperframes). Không kèm trong bộ; agent `edit-video` được phép gọi `npx hyperframes` (tải từ npm khi chạy, cần mạng) để dựng đồ họa HTML. Khuyến nghị khách cố định `npx hyperframes@0.8.137`. Tắt được bằng cách bỏ quyền trong `he-thong/ban-do-quyen.json`; khi đó vẫn dựng bằng FFmpeg. Tra cứu ngày 06/10/2026.
+
+**Cài bằng 1 câu (1.1.0).**
+- *Vấn đề:* khách không rành kỹ thuật ngại mở PowerShell, giải nén, gõ lệnh.
+- *Trải nghiệm mục tiêu:* khách đã cài ứng dụng Claude và đăng nhập gói trả phí → mở tab Code, chọn thư mục trống → dán câu chuẩn "Cài bản dùng thử Công xưởng SubAgent từ https://github.com/minhaiglobal-stack/subagent-mien-phi-kit vào thư mục này. Tên công ty tôi là ___, tên tôi là ___." → chỉ bấm Cho phép → thấy ✅ SẴN SÀNG và hướng dẫn mở phiên mới, gõ `/khoi-dong`.
+- *Đầu ra:* `CAI-DAT-1-CAU.md` (hướng dẫn cho Claude, có điều kiện kiểm tra và xử lý lỗi từng bước) và mục đầu README.
+- *Giới hạn:* hướng dẫn cài phần mềm viết cho Windows; khách phải tự đồng ý cài phần mềm và tự bấm hộp thoại quyền của Windows; Điều lệ và khóa an toàn của công xưởng chỉ có hiệu lực từ phiên mới mở trong thư mục (phiên cài đặt chạy với luật của Claude và quyền khách cho phép); nếu khách đã cài trước đó, Claude không cài lại (cài lại là lệnh của chủ trong PowerShell), chỉ chạy kiểm tra; thiếu FFmpeg thì kết quả kiểm tra còn 1 lỗi cho tới khi cài FFmpeg; tệp trong kho GitHub chỉ cập nhật khi chủ phát hành.

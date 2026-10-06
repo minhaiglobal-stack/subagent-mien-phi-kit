@@ -1,5 +1,14 @@
 # CHANGELOG — Công xưởng SubAgent, bản dùng thử cấp 1 (MIEN-PHI-KIT)
 
+## 1.1.0 — 2026-10-06
+
+Thêm cách **cài bằng 1 câu với Claude** (chủ duyệt 06/10/2026). Không đổi mã, không đổi quyền, không đổi lớp an toàn.
+
+- **Mới:** `CAI-DAT-1-CAU.md`, hướng dẫn cho Claude (tab Code của ứng dụng Claude, hoặc Claude Code) khi khách dán câu chuẩn: lấy và làm sạch tên công ty/tên khách; kiểm tra Windows, `node --version` (≥ 18), `git --version`, `ffmpeg -version`; đề xuất lệnh winget chính thức (`OpenJS.NodeJS.LTS`, `Git.Git`, `Gyan.FFmpeg`) và chờ khách đồng ý mới cài, xử lý PATH chưa nạp; tải bộ bằng `git clone` vào thư mục trống (hoặc `git init`/`fetch` khi thư mục chỉ có `.claude/settings.local.json`), không có Git thì tải bản nén `main.zip` về thư mục tạm và giải nén bằng `tar --strip-components=1` (bỏ thư mục con `subagent-mien-phi-kit-main`); thư mục không trống thì dừng hỏi; chạy `node cong-cu/cai-dat.mjs --chu "<tên>" --thuong-hieu "<công ty>"`; không chạy lại trình cài khi đã có `he-thong/registry.json`; đọc kết quả kiểm tra (✅ SẴN SÀNG → mở phiên mới, `/khoi-dong`, điền `bo-nho/ho-so-ca-nhan-hoa.md` và `bo-nho/bang-gia.md`; ❌ → giải thích tiếng Việt và cách sửa); luật an toàn khi cài (không nhập mật khẩu/token, không đọc `bi-mat/`, không cài khi chưa đồng ý, không đăng/gửi/xóa).
+- `README.md`: thêm mục đầu tiên **Cài nhanh bằng 1 câu với Claude** (3 bước + câu chuẩn) và một dòng dẫn cho Claude tới `CAI-DAT-1-CAU.md`; cách cài thủ công cũ giữ nguyên, đổi tên thành **Cách 2: Cài thủ công 3 bước**; cấu trúc thư mục thêm `CAI-DAT-1-CAU.md`; khẩu hiệu đổi thành "Kỷ Nguyên Vươn Mình. Liên Tục Tiến Lên!"; số phiên bản 1.1.0.
+- `san-pham.json`: `phien_ban` 1.1.0; `khau_hieu` mới; `mo_ta_ngan` nêu cách cài 1 câu; yêu cầu máy ghi ứng dụng Claude (tab Code) hoặc Claude Code; thêm `CAI-DAT-1-CAU.md` vào `tep_cot_loi`.
+- `DAC-TA.md`: thêm phần cài bằng 1 câu.
+
 ## 1.0.1 — 2026-10-06
 
 Bản vá tài liệu (không đổi mã, không đổi quyền). Ghi rõ nguồn và giấy phép của thành phần bên thứ ba mà agent `edit-video` được phép gọi (`npx hyperframes`), đồng bộ với Công xưởng SubAgent 2.0.2.

@@ -21,7 +21,7 @@
   ],
   "agents": {
     "kiem-dinh-chat-luong": { "ghi_duoc": ["ban-giao/bang-chung/", "hang-doi/"], "bash_duoc_phep": ["node cong-cu/kiem-dinh", "node cong-cu/job.mjs", "ffprobe", "ffmpeg -hide_banner -i", "ffmpeg -i"] },
-    "edit-video": { "ghi_duoc": ["ban-giao/", "hang-doi/"], "bash_duoc_phep": ["ffmpeg", "ffprobe", "node cong-cu/job.mjs", "node cong-cu/kiem-dinh-video.mjs", "npx hyperframes", "ls", "mkdir"] },
+    "edit-video": { "ghi_duoc": ["ban-giao/", "hang-doi/"], "bash_duoc_phep": ["ffmpeg", "ffprobe", "node cong-cu/job.mjs", "node cong-cu/kiem-dinh-video.mjs", "npx hyperframes@0.8.137 ", "ls", "mkdir"] },
     "cskh-soan-nhap": { "ghi_duoc": ["ban-giao/nhap/", "hang-doi/"], "bash": false }
   }
 }
